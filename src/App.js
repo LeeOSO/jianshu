@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Header from "./common/header";
+import Provider from "react-redux/lib/components/Provider";
+import store from "./store";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Home from "./pages/home";
+import Detail from "./pages/detail";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        //将store提供给子组件
+        <Provider store={store}>
+            <div>
+                <Header/>
+                <BrowserRouter>
+                    <Routes>
+                        <Route path='/' element={<Home/>}/>
+                        <Route path='/detail' element={<Detail/>}/>
+                    </Routes>
+                </BrowserRouter>
+            </div>
+        </Provider>
+    );
 }
 
 export default App;
