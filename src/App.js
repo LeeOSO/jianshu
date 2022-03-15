@@ -10,15 +10,14 @@ function App() {
     return (
         //将store提供给子组件
         <Provider store={store}>
-            <div>
+            <BrowserRouter>
+                {/*使用Link组件必须放在内部*/}
                 <Header/>
-                <BrowserRouter>
-                    <Routes>
-                        <Route path='/' element={<Home/>}/>
-                        <Route path='/detail' element={<Detail/>}/>
-                    </Routes>
-                </BrowserRouter>
-            </div>
+                <Routes>
+                    <Route path='/' element={<Home/>}/>
+                    <Route path='/detail' element={<Detail/>}/>
+                </Routes>
+            </BrowserRouter>
         </Provider>
     );
 }

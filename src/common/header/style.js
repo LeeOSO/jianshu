@@ -6,7 +6,7 @@ height:56px;
 border-bottom: 10x solid #f0f0f0; 
 position: relative`;
 
-export const Logo = styled.a`
+export const Logo = styled.div`
 height:56px; 
 width:100px; 
 position:absolute; 

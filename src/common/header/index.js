@@ -15,6 +15,7 @@ import IconFontStyle from "../../static/iconfont/iconfont";
 import {CSSTransition} from "react-transition-group";
 import connect from "react-redux/lib/connect/connect";
 import {actionCreators} from "./store/";
+import {Link} from "react-router-dom";
 
 
 class Header extends Component {
@@ -24,7 +25,9 @@ class Header extends Component {
         return (
             <HeaderWrapper>
                 <IconFontStyle/>
-                <Logo href='/'/>
+                <Link to={'/'}>
+                    <Logo/>
+                </Link>
                 <Nav>
                     <NavItem className='left active'>首页</NavItem>
                     <NavItem className='left'>下载App</NavItem>
