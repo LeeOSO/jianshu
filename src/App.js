@@ -5,8 +5,14 @@ import store from "./store";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "./pages/home";
 import Detail from "./pages/detail";
+import {Navigate, useParams} from "react-router";
+import Login from "./pages/login";
 
 function App() {
+    const Wrapper = (props) => {//router6以上获取路由参数方法
+        const params = useParams();
+        return <Detail{...{...props, match: {params}}} />
+    };
     return (
         //将store提供给子组件
         <Provider store={store}>
@@ -15,7 +21,9 @@ function App() {
                 <Header/>
                 <Routes>
                     <Route path='/' element={<Home/>}/>
-                    <Route path='/detail' element={<Detail/>}/>
+                    <Route path='/login' element={<Login/>}/>
+                    {/* /detail/:id->动态路由匹配参数   '/detail/' + item.get('id')*/}
+                    <Route path='/detail/:id' element={<Wrapper/>}/>
                 </Routes>
             </BrowserRouter>
         </Provider>

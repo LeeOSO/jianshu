@@ -15,13 +15,14 @@ import IconFontStyle from "../../static/iconfont/iconfont";
 import {CSSTransition} from "react-transition-group";
 import connect from "react-redux/lib/connect/connect";
 import {actionCreators} from "./store/";
+import {actionCreators as loginActionCreators} from "../../pages/login/store";
 import {Link} from "react-router-dom";
 
 
 class Header extends Component {
 
     render() {
-        const {focused, list} = this.props;
+        const {focused, list, login} = this.props;
         return (
             <HeaderWrapper>
                 <IconFontStyle/>
@@ -31,7 +32,10 @@ class Header extends Component {
                 <Nav>
                     <NavItem className='left active'>首页</NavItem>
                     <NavItem className='left'>下载App</NavItem>
-                    <NavItem className='right'>登录</NavItem>
+                    {login ?
+                        <Link to={'/login'}><NavItem className='right' onClick={this.props.logout}>退出</NavItem></Link>
+                        : <NavItem className='right'>登录</NavItem>
+                    }
                     <NavItem className='right'>
                         <span className="iconfont">&#xe636;</span>
                     </NavItem>
@@ -105,6 +109,7 @@ const mapStateToProps = (state) => { //store数据映射到组件props中
         list: state.getIn(['header', 'list']),
         page: state.getIn(['header', 'page']),
         totalPage: state.getIn(['header', 'totalPage']),
+        login: state.getIn(['login', 'login'])
     };
 };
 
@@ -137,6 +142,9 @@ const mapDispatchToProps = (dispatch) => { //store.dispatch(action);
             } else {
                 dispatch(actionCreators.changePage(0));
             }
+        },
+        logout() { //???为啥就直接退出到了login页面
+            dispatch(loginActionCreators.logout());
         }
     };
 };

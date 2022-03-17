@@ -32,6 +32,7 @@ export const BackTop = styled.div`
     line-height: 30px;
     text-align: center;
     font-size: 14px;
+    border: 1px sold #dcdcdc;
 `
 
 
