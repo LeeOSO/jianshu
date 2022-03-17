@@ -119,8 +119,70 @@ export const RecommendItem = styled.div`
 
 export const WriterWrapper = styled.div`
     width: 278px;
-    border: 1px solid #dcdcdc;
     height: 300px;
-    line-height: 300px;
     text-align: center;
 `;
+
+export const WriterHeader = styled.div`
+    width: 278px;
+    height: 20px;
+    line-height: 20px;
+    text-align: left;
+    .title {
+        font-size: 14px;
+        color: #969696;
+    }
+    .change {
+        font-size: 14px;
+        color: #969696;
+        display: inline-block;
+        float: right;
+    }
+`;
+
+export const WriterContainer = styled.ul`
+    margin: 0 0 20px;
+    text-align: left;
+    list-style: none;
+    padding-left: 0;
+`;
+
+export const WriterItem = styled.li`
+    margin-top: 15px;
+    width: 100%;
+    .avatar {
+        float: left;
+        width: 48px;
+        height: 48px;
+        margin-right: 10px;
+        display: block;
+    }
+    .avatar_img {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+    }
+    .follow {
+        float: right;
+        margin-top: 5px;
+        padding: 0;
+        font-size: 13px;
+        color: #42c02e;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .name {
+        padding-top: 5px;
+        margin-right: 60px;
+        font-size: 14px;
+        padding-left: 23px;
+        display: block;
+    }
+    .info {
+        margin-top: 2px;
+        font-size: 12px;
+        color: #969696;
+    }
+`;
+

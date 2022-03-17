@@ -13,16 +13,16 @@ class List extends PureComponent {
                     list.map((item, index) => {
                         return (
                             //单页应用，避免html多次加载
-                            <Link to={'/detail'} key={item.get('id') + index}>
-                                <ListItem >
-                                    <img className={'pic'}
-                                         src={item.get('imgUrl')}/>
-                                    <ListInfo>
+                            <ListItem>
+                                <img className={'pic'}
+                                     src={item.get('imgUrl')}/>
+                                <ListInfo>
+                                    <Link to={'/detail'} key={item.get('id') + index}>
                                         <h3 className={'title'}>{item.get('title')}</h3>
-                                        <p className={'desc'}>{item.get('desc')}</p>
-                                    </ListInfo>
-                                </ListItem>
-                            </Link>
+                                    </Link>
+                                    <p className={'desc'}>{item.get('desc')}</p>
+                                </ListInfo>
+                            </ListItem>
                         );
                     })
                 }
