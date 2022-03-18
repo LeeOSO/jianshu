@@ -54,7 +54,9 @@ class Header extends Component {
                 </Nav>
                 <Addition>
                     <Button className='reg'>注册</Button>
-                    <Button className='writing'> <span className="iconfont">&#xe708;</span>写文章</Button>
+                    <Link to={'/write'}>
+                        <Button className='writing'> <span className="iconfont">&#xe708;</span>写文章</Button>
+                    </Link>
                 </Addition>
             </HeaderWrapper>
         );
