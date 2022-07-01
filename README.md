@@ -1,6 +1,6 @@
 # JianShu-Front
 ## Introduction
-This is a React application that imitates Jianshu's front-end page and uses Class Component.
+This is a React application that imitates Jianshu's front-end page.
 
 Screenshots:
 
